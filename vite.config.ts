@@ -46,10 +46,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-    server: {
+  server: {
     port: 3000,
     strictPort: true,
-    allowedHosts: ['.ngrok-free.dev', '.ngrok-free.app'],
+    allowedHosts: ['.ngrok-free.dev', '.ngrok-free.app'], // lets ngrok links reach `npm run dev`
     proxy: {
       '/api': {
         target: 'http://localhost:5000',
@@ -59,6 +59,6 @@ export default defineConfig({
   },
   preview: {
     port: 3000,
-    allowedHosts: ['.ngrok-free.dev', '.ngrok-free.app'], // ← NEW
+    allowedHosts: ['.ngrok-free.dev', '.ngrok-free.app'], // lets ngrok links reach `npm run preview`
   },
 })
